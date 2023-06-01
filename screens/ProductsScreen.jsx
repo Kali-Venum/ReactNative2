@@ -55,5 +55,6 @@ const styles = StyleSheet.create({
   searchSortAndFilterWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginTop: 10
   },
 });
