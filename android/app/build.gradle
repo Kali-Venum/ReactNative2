@@ -3,6 +3,9 @@ apply plugin: "com.facebook.react"
 
 import com.android.build.OutputFile
 
+// include ':react-native-splash-screen'   
+// project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
+
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -149,6 +152,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-splash-screen')
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
