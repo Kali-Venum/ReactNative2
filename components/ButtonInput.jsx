@@ -1,9 +1,12 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-export default function ButtonInput({buttonTitle, ...rest}) {
+export default function ButtonInput({buttonTitle, buttonHandler, ...rest}) {
   return (
-    <TouchableOpacity style={styles.buttonContainer} {...rest}>
+    <TouchableOpacity
+      onPress={buttonHandler}
+      style={styles.buttonContainer}
+      {...rest}>
       <Text style={styles.buttonText}>{buttonTitle}</Text>
     </TouchableOpacity>
   );
@@ -17,7 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0B223E',
     borderWidth: 2,
     borderRadius: 50,
-    marginTop: 15
+    marginTop: 15,
   },
   buttonText: {
     color: '#FFFFFF',

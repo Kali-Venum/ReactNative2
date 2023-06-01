@@ -8,7 +8,11 @@ import EG from '../assets/EG.svg';
 import InputField from '../components/InputField';
 import ButtonInput from '../components/ButtonInput';
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
+  loginHandler = () => {
+    navigation.navigate('ProductsScreen');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.loginWrapper}>
@@ -25,7 +29,7 @@ export default function LoginScreen() {
           iconType={'user'}
           secureTextEntry={true}
         />
-        <ButtonInput buttonTitle={'Log in'} />
+        <ButtonInput buttonHandler={loginHandler} buttonTitle={'Log in'} />
       </View>
     </View>
   );
