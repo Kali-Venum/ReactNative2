@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, FlatList} from 'react-native';
 import React from 'react';
 import {windowWidth} from '../utils/Dimentions';
 
@@ -10,8 +10,14 @@ import Filter from '../assets/filter.svg';
 // Components.
 import InputField from '../components/InputField';
 import SearchInput from '../components/SearchInput';
+import Product from '../components/Product';
 
 export default function ProductsScreen() {
+
+  const dataArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+  // const dataArr = [1];
+
   return (
     <View style={styles.container}>
       <View style={styles.productTextAndSignOutButtonContainer}>
@@ -23,9 +29,14 @@ export default function ProductsScreen() {
       <Text style={styles.subText}>Product & Customer Credentials</Text>
       <View style={styles.searchSortAndFilterWrapper}>
         <SearchInput placeholder={'Search'} />
-        <Sort />
-        <Filter />
+        <Sort height={50} />
+        <Filter height={50} />
       </View>
+      <FlatList style={styles.productsList} 
+        data={dataArr}
+        renderItem={Product}
+        numColumns={2}
+      />
     </View>
   );
 }
@@ -46,7 +57,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   signOutLogoWrapper: {
-    marginLeft: '50%',
+    marginLeft: '60%'
   },
   subText: {
     color: '#000000',
@@ -54,7 +65,12 @@ const styles = StyleSheet.create({
   },
   searchSortAndFilterWrapper: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: 10
+    justifyContent: 'space-evenly',
+    marginTop: 10,
   },
+  productsList: {
+    flex: 1,
+    marginHorizontal: 10,
+    marginVertical: 10,
+  }
 });
