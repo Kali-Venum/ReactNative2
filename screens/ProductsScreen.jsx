@@ -40,7 +40,7 @@ export default function ProductsScreen({navigation}) {
         <TouchableOpacity>
           <Sort height={50} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => console.log('Click.')}>
+        <TouchableOpacity onPress={() => navigation.navigate('FilterScreen')}>
           <Filter height={50} />
         </TouchableOpacity>
       </View>
