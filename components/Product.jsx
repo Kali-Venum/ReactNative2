@@ -17,7 +17,11 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 20,
+      padding: 15,
+      margin: 10,
+      backgroundColor: '#FFFFFF',
+      borderRadius: 10
+      // borderWidth: 1
     },
     aboutText: {
       color: '#9CA0AF',
@@ -25,6 +29,8 @@ const styles = StyleSheet.create({
     },
     priceText: {
       color: '#000000',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      marginRight: '60%',
+      marginTop: 5
     }
 })
